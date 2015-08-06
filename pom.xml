@@ -13,7 +13,7 @@
         <jersey.version>2.16</jersey.version>
         <spring.version>4.1.6.RELEASE</spring.version>
         <surefire.version>2.18</surefire.version>
-        <env>not_set</env>
+        <test.env>not_set</test.env>
         <testNgFile>you-must-specify-testNgFile</testNgFile>
     </properties>
     <build>
@@ -44,7 +44,8 @@
                         </property>
                     </properties>
                     <systemPropertyVariables>
-                        <env>${env}</env>
+                        
+                        <test.env>${test.env}</test.env>
                         <org.uncommons.reportng.title>Rest Services Tests for ${env}</org.uncommons.reportng.title>
                         <org.uncommons.reportng.external-link-classname>com.dhenton9000.reporting.JSONComparisonViewerLink</org.uncommons.reportng.external-link-classname>
                         <org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
@@ -60,7 +61,7 @@
         <profile>
             <id>dev</id>
             <properties>
-                <env>dev</env>
+                <test.env>dev</test.env>
             </properties>
             <build>
                 <resources>
@@ -78,7 +79,7 @@
         <profile>
             <id>prod</id>
             <properties>
-                <env>prod</env>
+                <test.env>prod</test.env>
             </properties>
             <build>
                 <resources>
@@ -192,6 +193,12 @@
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.2-1000.jdbc4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dhenton9000.selenium.sandbox</groupId>
+            <artifactId>selenium-sandbox</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 </project>

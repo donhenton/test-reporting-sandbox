@@ -7,7 +7,6 @@ package com.dhenton9000.client;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.dhenton9000.reporting.ENV;
 import com.dhenton9000.reporting.VelocityEngineFactory;
 import java.io.File;
 import java.io.IOException;
@@ -43,7 +42,7 @@ public class RestClientBase {
     /**
      * single point of reference for the properties file in use everywhere
      */
-    public static final String PROPERTIES_FILE_NAME = "app.properties";
+    
 
     private Logger LOG = LoggerFactory.getLogger(RestClientBase.class);
 
@@ -114,18 +113,7 @@ public class RestClientBase {
         return t;
     }
 
-    public static ENV getENV() {
-
-        ENV env = null;
-
-        try {
-            env = ENV.valueOf(System.getProperty("env", null));
-        } catch (Exception err) {
-        }
-
-        return env;
-
-    }
+     
 
     /**
      * create a map suitable for use in submitting headers in a request.

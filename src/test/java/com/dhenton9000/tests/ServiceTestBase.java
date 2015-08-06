@@ -10,6 +10,7 @@ import com.dhenton9000.client.RestClientBase;
 import com.dhenton9000.listeners.ServiceReportingListener;
 import com.dhenton9000.reporting.JSONComparisonTool;
 import com.dhenton9000.reporting.JSONSorter;
+import com.dhenton9000.selenium.drivers.DriverFactory;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
@@ -33,7 +34,7 @@ import org.testng.annotations.Listeners;
 public class ServiceTestBase implements ITest {
 
     private final PropertiesConfiguration config;
-    public static final String PROPERTIES_FILE_NAME = "app.properties";
+    
 
     private static final Logger LOG = LoggerFactory.getLogger(ServiceTestBase.class);
     private JSONComparisonTool compareTool = null;
@@ -43,7 +44,7 @@ public class ServiceTestBase implements ITest {
     public ServiceTestBase() {
         context = new ClassPathXmlApplicationContext("spring-datasource.xml");
         try {
-            config = new PropertiesConfiguration(PROPERTIES_FILE_NAME);
+            config = new PropertiesConfiguration(DriverFactory.ENV_PROPERTIES_FILENAME);
         } catch (ConfigurationException ex) {
             throw new RuntimeException("configuration error: " + ex.getMessage());
         }

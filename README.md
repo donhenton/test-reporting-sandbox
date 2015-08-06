@@ -1,0 +1,1 @@
+mvn clean test -Pdev -DtestNgFile=sample for service test

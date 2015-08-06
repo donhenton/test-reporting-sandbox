@@ -10,7 +10,6 @@ package com.dhenton9000.reporting;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import com.dhenton9000.client.RestClientBase;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -31,10 +30,8 @@ import org.slf4j.LoggerFactory;
 import static org.testng.Assert.fail;
 import org.testng.Reporter;
 import static com.dhenton9000.reporting.JSONComparisonViewerLink.JSON_COMPARISON_FOLDER;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.Collection;
-import org.apache.commons.io.IOUtils;
+import com.dhenton9000.selenium.drivers.DriverFactory;
+import com.dhenton9000.selenium.drivers.DriverFactory.ENV;
 
 /**
  * This class will write out to a JSON file, that is used to analyze failed
@@ -188,7 +185,7 @@ public class JSONComparisonTool {
 
         final File jsonFile2 = new File(jsonFileStr);
         String jsonData;
-        ENV env = RestClientBase.getENV();
+        ENV env = DriverFactory.getENV();
         String envStr = "not found";
         if (env != null) {
             envStr = env.toString();
