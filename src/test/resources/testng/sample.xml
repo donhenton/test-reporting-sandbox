@@ -1,40 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-
-
-http://testng.org/doc/documentation-main.html#testng-xml
-
--->
-
-
-
-  
-<suite name="Sample Suite" verbose="4" >
-  
- 
-  <test name="Sample Tests">
-  
-  <packages>
-      <package name="com.dhenton9000.restaurants" />
-   </packages>
-    
-  </test>
-  
- <!--
- <test name="Fred Tests" parallel="classes" thread-count="1"  >
+<suite name="Sample Suite" verbose="4">
+    <test name="Sample JSON Comparison Tests">
+        <packages>
+            <package name="com.dhenton9000.restaurants"/>
+        </packages>
+    </test>
+    <test name="Image Comparison Tests" parallel="classes" thread-count="1">
         <classes>
-            <class name="com.dhenton9000.FredThing"/>
-         
-             
-           
+            <class name="com.dhenton9000.screenshot.demo.ScreenShotComparisonTest"/>
         </classes>
     </test>
- -->
-  
-    
-  
 </suite>

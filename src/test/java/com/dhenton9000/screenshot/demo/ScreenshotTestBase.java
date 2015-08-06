@@ -12,6 +12,7 @@ import com.dhenton9000.screenshots.single.AbstractSingleScreenShot;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import static org.testng.Assert.fail;
 
 /**
  *
@@ -32,6 +33,7 @@ public class ScreenshotTestBase extends BaseTest  {
                     + "areaCount " + compResult.getFailedAreas().size() + "\n";
 
             LOG.info(info);
+            
 
             try {
                 comparator.writeToJsonFile(sample, getTestName());
@@ -39,6 +41,8 @@ public class ScreenshotTestBase extends BaseTest  {
                 LOG.error("unable to write json file for test comparison "
                         + sample.classPathToGoldFile() + "\n" + err.getMessage());
             }
+            
+            fail(info);
 
         }
     }

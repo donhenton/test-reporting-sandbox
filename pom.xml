@@ -46,7 +46,7 @@
                     <systemPropertyVariables>
                         
                         <test.env>${test.env}</test.env>
-                        <org.uncommons.reportng.title>Rest Services Tests for ${env}</org.uncommons.reportng.title>
+                        <org.uncommons.reportng.title>Rest Services Tests for ${test.env}</org.uncommons.reportng.title>
                         <org.uncommons.reportng.external-link-classname>com.dhenton9000.reporting.JSONComparisonViewerLink</org.uncommons.reportng.external-link-classname>
                         <org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
                     </systemPropertyVariables>

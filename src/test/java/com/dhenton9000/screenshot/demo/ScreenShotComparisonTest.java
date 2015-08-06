@@ -19,6 +19,9 @@ public class ScreenShotComparisonTest extends ScreenshotTestBase {
     @Test
     public void testSampleScreenshot() throws IOException {
         
+        System.setProperty("test.env","dev");
+        
+        
         MainAppScreenShot sample
                 = new MainAppScreenShot(this.getAutomationRepository());
 

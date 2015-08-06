@@ -23,7 +23,7 @@ public class MainAppScreenShot extends AbstractSingleScreenShot {
     @Override
     public void setUpScreenshot() {
         this.getGenericAutomationRepository().maximizeWindow();
-        this.getGenericAutomationRepository().getDriver().get("http://http://donhenton-springmvc3.herokuapp.com/app/home.html");
+        this.getGenericAutomationRepository().getDriver().get("http://donhenton-springmvc3.herokuapp.com/app/home.html");
         this.getGenericAutomationRepository().getWaitMethods().waitForDuration(3);
     }
     
