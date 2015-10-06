@@ -103,6 +103,22 @@ public class JSONComparisonTool {
     }
 
     /**
+     * central routine for cleaning strings for comparison.
+     * @param input
+     * @return 
+     */        
+    public static String cleanString(String input)
+    {
+        if (input == null)
+            return null;
+        
+        String cleaned = input.trim();
+        return cleaned.replaceAll("\\P{Print}", " ");
+    }
+            
+            
+            
+    /**
      * pretty print two json strings and compare them.Write out to a json file
      * for comparison in a diff tool should the comparison exceed or equal the
      * threshold value for the Levenshtein Distance
@@ -123,6 +139,10 @@ public class JSONComparisonTool {
             throws IOException, Exception {
 
         int distanceValue = -9;
+
+        expectedString = cleanString(expectedString);
+        actualString = cleanString(actualString);
+
         expectedString = prettyPrint(expectedString);
         actualString = prettyPrint(actualString);
         distanceValue = StringUtils.getLevenshteinDistance(expectedString, actualString);
@@ -133,7 +153,6 @@ public class JSONComparisonTool {
             //write out to the json  and js file
             LOG.debug("got greater than threshold");
             String templateName = "velocity_templates/comparisons/singleTestForServices.vm";
-
 
             VelocityContext context = new VelocityContext();
             context.put("expected", expectedString);
