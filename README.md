@@ -52,10 +52,21 @@ https://github.com/SeleniumHQ/docker-selenium
 docker run -d -p 4470:4444 --shm-size 2g selenium/standalone-firefox:3.141.59-radium
 ```
 
-The display page will be at http://dockerlocal:4470/wd/hub where dockerlocal
+The display page will be at http://localhost:4470/wd/hub where dockerlocal
 refers to the ip of your docker-toolbox vm (docker-machine ip to find it) if you
 use the dstart.sh script to launch the docker container
 
 At this moment this code uses Selenium < 3, and would need an update if the
 selenium driver were changed.
 
+## Dependencies
+
+This project depends on two other projects in my repository, which you will
+have to install locally:
+
+* https://github.com/donhenton/selenium-sandbox
+* https://github.com/donhenton/embedded-jetty-sandbox
+
+An XML Utils library is also required:
+
+https://github.com/donhenton/code-attic/tree/master/utils/XmlUtils
