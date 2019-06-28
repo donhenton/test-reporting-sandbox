@@ -41,10 +41,15 @@ comparison. See RestaurantTests.java
 
 
 
-## Update (8/3/2017) 
+## Update (6/28/2019) 
 
-The current code base needs older selenium so the docker image to use is 
-selenium/standalone-firefox:2.48.2
+The current code base needs requires firefox. So docker image that works is
+
+https://github.com/SeleniumHQ/docker-selenium
+
+```
+docker run -d -p 4470:4444 --shm-size 2g selenium/standalone-firefox:3.141.59-radium
+```
 
 The display page will be at http://dockerlocal:4470/wd/hub where dockerlocal
 refers to the ip of your docker-toolbox vm (docker-machine ip to find it) if you

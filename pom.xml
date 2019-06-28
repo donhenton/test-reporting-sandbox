@@ -100,7 +100,7 @@
         <dependency>
             <groupId>org.uncommons</groupId>
             <artifactId>reportng</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.5-SNAPSHOT</version>
             <type>jar</type>
             <exclusions>
                 <exclusion>
@@ -186,13 +186,13 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>4.1.6.RELEASE</version>
+            <version>${spring.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>postgresql</groupId>
+            <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.2-1000.jdbc4</version>
+            <version>42.2.5</version>
         </dependency>
         <dependency>
             <groupId>com.dhenton9000.selenium.sandbox</groupId>

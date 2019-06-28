@@ -43,7 +43,7 @@ public class RestaurantTests extends RestaurantTestBase {
        CallReturn ret =   this.doGet("/backbone/restaurant/4", null);
        assertEquals(ret.status,200);
        String resultString = ret.jsonStringResult;
-       
+       // this will fail deliberately as the gold file is deliberately wrong
        String expectedString
                 = readGoldFile("/gold_files/restaurants/getRestaurantById.json");
 
