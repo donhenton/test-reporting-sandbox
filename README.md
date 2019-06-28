@@ -15,7 +15,7 @@ OR
 mvn clean test -Pdev -DtestNgFile=sample -Dremote.server=docker
 
 
-if the local docker instance is configured, with its url in the
+if the local docker instance is configured,  its url will be in the
 env.properties file of the environment (dev,prod)
 
 
@@ -28,6 +28,7 @@ to the output.
 
 * target/classes/public_html/index.html (screenshot comparisons)
 * target/classes/service_public_html/index.html (json comparisons)
+* testng reporting suite -- target/surefire-reports/html/index.html
 
 ### Screenshot Comparisons
 This webpage presents a stored gold file image, compares its to the image
